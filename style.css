@@ -1,3 +1,7 @@
+/* =========================================
+   RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,13 +20,13 @@ body {
 
     background:
         radial-gradient(
-            circle at 50% 25%,
+            circle at center,
             #ffffff 0%,
-            #fffdf7 35%,
-            #fff3d3 100%
+            #fffaf0 45%,
+            #f8edc9 100%
         );
 
-    color: #65552f;
+    color: #66552f;
 }
 
 
@@ -33,40 +37,152 @@ body {
 .pagina {
     min-height: 100vh;
 
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    position: relative;
     overflow: hidden;
 }
 
 
 /* =========================================
-   ENCABEZADO
+   TÍTULO
 ========================================= */
 
 .encabezado {
+    position: relative;
+    z-index: 100;
+
     text-align: center;
 
-    padding: 30px 15px 0;
-
-    position: relative;
-    z-index: 50;
+    padding: 25px 15px 0;
 }
 
 .encabezado h1 {
-    font-size: 34px;
-
-    color: #75622f;
+    font-size: 35px;
+    color: #74602c;
 
     margin-bottom: 8px;
 }
 
 .encabezado p {
-    font-size: 17px;
+    font-size: 16px;
+    color: #a18a51;
+}
 
-    color: #9b8650;
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.galeria {
+    position: absolute;
+
+    top: 125px;
+    left: 50%;
+
+    width: 1100px;
+    height: 620px;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   FOTOS
+========================================= */
+
+.foto {
+    position: absolute;
+
+    width: 145px;
+    height: 180px;
+
+    padding: 9px;
+
+    background: white;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 12px 25px rgba(70, 55, 20, .20);
+}
+
+.foto img {
+    width: 100%;
+    height: 135px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* IZQUIERDA */
+
+.foto1 {
+    left: 20px;
+    top: 20px;
+
+    transform: rotate(-10deg);
+}
+
+.foto2 {
+    left: 40px;
+    top: 220px;
+
+    transform: rotate(7deg);
+}
+
+.foto3 {
+    left: 110px;
+    top: 415px;
+
+    transform: rotate(-6deg);
+}
+
+.foto4 {
+    left: 245px;
+    top: 105px;
+
+    transform: rotate(8deg);
+}
+
+
+/* DERECHA */
+
+.foto5 {
+    right: 20px;
+    top: 20px;
+
+    transform: rotate(10deg);
+}
+
+.foto6 {
+    right: 40px;
+    top: 220px;
+
+    transform: rotate(-7deg);
+}
+
+.foto7 {
+    right: 110px;
+    top: 415px;
+
+    transform: rotate(6deg);
+}
+
+.foto8 {
+    right: 245px;
+    top: 105px;
+
+    transform: rotate(-8deg);
 }
 
 
@@ -78,11 +194,11 @@ body {
     position: relative;
 
     width: 700px;
-    height: 650px;
+    height: 620px;
 
-    margin-top: 5px;
+    margin-top: 15px;
 
-    flex-shrink: 0;
+    z-index: 10;
 }
 
 
@@ -97,69 +213,49 @@ body {
     height: 400px;
 
     left: 50%;
-    bottom: 20px;
+    bottom: 10px;
 
     border-radius: 20px;
 
-    transform-origin: bottom center;
+    transform-origin: bottom;
 
     background:
         linear-gradient(
             to right,
-            #3f6b38,
-            #79a357,
-            #426f3a
+            #3d6836,
+            #82a85b,
+            #416e3b
         );
 
-    z-index: 1;
+    z-index: 2;
 }
 
 .t1 {
-    transform: rotate(-40deg);
+    transform: rotate(-38deg);
 }
 
 .t2 {
-    transform: rotate(-32deg);
-}
-
-.t3 {
     transform: rotate(-25deg);
 }
 
+.t3 {
+    transform: rotate(-13deg);
+}
+
 .t4 {
-    transform: rotate(-17deg);
+    transform: rotate(-5deg);
 }
 
 .t5 {
-    transform: rotate(-9deg);
+    transform: rotate(8deg);
 }
 
 .t6 {
-    transform: rotate(9deg);
+    transform: rotate(22deg);
 }
 
 .t7 {
-    transform: rotate(17deg);
-}
-
-.t8 {
-    transform: rotate(25deg);
-}
-
-.t9 {
-    transform: rotate(32deg);
-}
-
-.t10 {
-    transform: rotate(40deg);
-}
-
-.t11 {
-    transform: rotate(-4deg);
-}
-
-.t12 {
-    transform: rotate(4deg);
+    transform: rotate(37deg);
 }
 
 
@@ -170,8 +266,8 @@ body {
 .hoja {
     position: absolute;
 
-    width: 78px;
-    height: 34px;
+    width: 85px;
+    height: 36px;
 
     background:
         linear-gradient(
@@ -180,58 +276,45 @@ body {
             #47783e
         );
 
-    border-radius: 100% 0 100% 0;
+    border-radius:
+        100% 0 100% 0;
 
-    z-index: 2;
+    z-index: 4;
 }
 
 .h1 {
-    left: 130px;
+    left: 120px;
     bottom: 170px;
 
     transform: rotate(-25deg);
 }
 
 .h2 {
-    left: 185px;
-    bottom: 220px;
+    left: 200px;
+    bottom: 230px;
 
     transform: rotate(25deg);
 }
 
 .h3 {
-    left: 235px;
-    bottom: 140px;
+    left: 260px;
+    bottom: 120px;
 
     transform: rotate(-30deg);
 }
 
 .h4 {
-    right: 185px;
+    right: 160px;
     bottom: 190px;
 
     transform: rotate(25deg);
 }
 
 .h5 {
-    right: 120px;
-    bottom: 145px;
+    right: 230px;
+    bottom: 120px;
 
     transform: rotate(-20deg);
-}
-
-.h6 {
-    right: 235px;
-    bottom: 245px;
-
-    transform: rotate(30deg);
-}
-
-.h7 {
-    left: 300px;
-    bottom: 110px;
-
-    transform: rotate(-10deg);
 }
 
 
@@ -242,146 +325,110 @@ body {
 .margarita {
     position: absolute;
 
-    width: 110px;
-    height: 110px;
+    width: 125px;
+    height: 125px;
 
     padding: 0;
 
-    border: 0;
+    border: none;
 
     background: transparent;
 
+    border-radius: 50%;
+
     cursor: pointer;
 
-    z-index: 5;
+    z-index: 20;
 
-    transform-origin: center bottom;
+    overflow: hidden;
 
-    animation: balanceo 4s ease-in-out infinite;
+    animation:
+        balanceo 4s ease-in-out infinite;
 
-    -webkit-tap-highlight-color: transparent;
+    transition:
+        transform .3s ease;
 }
 
-.margarita:focus-visible {
-    outline: 3px solid #e4b832;
-    border-radius: 50%;
-}
+.margarita img {
+    width: 100%;
+    height: 100%;
 
-
-/* =========================================
-   PÉTALOS
-========================================= */
-
-.petalo {
-    position: absolute;
-
-    width: 43px;
-    height: 65px;
-
-    left: 33px;
-    top: 19px;
+    object-fit: cover;
 
     border-radius: 50%;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff,
-            #fffaf0
-        );
-
-    transform-origin: 22px 36px;
+    border: 10px solid white;
 
     box-shadow:
-        0 2px 8px rgba(100, 80, 20, .08);
-
-    transition: .25s;
+        0 8px 18px rgba(50, 40, 10, .22);
 }
 
-.p1 {
-    transform: rotate(0deg) translateY(-24px);
+.margarita:hover img {
+    transform: scale(1.12);
+    filter: brightness(1.08);
 }
-
-.p2 {
-    transform: rotate(45deg) translateY(-24px);
-}
-
-.p3 {
-    transform: rotate(90deg) translateY(-24px);
-}
-
-.p4 {
-    transform: rotate(135deg) translateY(-24px);
-}
-
-.p5 {
-    transform: rotate(180deg) translateY(-24px);
-}
-
-.p6 {
-    transform: rotate(225deg) translateY(-24px);
-}
-
-.p7 {
-    transform: rotate(270deg) translateY(-24px);
-}
-
-.p8 {
-    transform: rotate(315deg) translateY(-24px);
-}
-
-
-/* =========================================
-   CENTRO
-========================================= */
-
-.centro {
-    position: absolute;
-
-    width: 45px;
-    height: 45px;
-
-    left: 33px;
-    top: 33px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #ffe067 0%,
-            #f7c33a 65%,
-            #d99b20 100%
-        );
-
-    box-shadow:
-        inset 0 0 0 5px rgba(255, 230, 90, .3);
-
-    z-index: 10;
-
-    transition: .25s;
-}
-
-
-/* =========================================
-   INTERACCIÓN DE FLORES
-========================================= */
 
 .margarita:active {
-    animation: flor-tocada .55s ease;
-}
-
-.margarita:active .centro {
-    transform: scale(1.18);
-}
-
-.margarita:active .petalo {
-    filter: brightness(1.05);
+    transform: scale(1.12);
 }
 
 
 /* =========================================
-   ANIMACIÓN DEL RAMO
+   POSICIÓN DE LAS 7 FLORES
+========================================= */
+
+.m1 {
+    left: 65px;
+    top: 80px;
+
+    animation-delay: -.5s;
+}
+
+.m2 {
+    left: 185px;
+    top: 35px;
+
+    animation-delay: -1.4s;
+}
+
+.m3 {
+    left: 305px;
+    top: 65px;
+
+    animation-delay: -.8s;
+}
+
+.m4 {
+    left: 425px;
+    top: 35px;
+
+    animation-delay: -2s;
+}
+
+.m5 {
+    left: 515px;
+    top: 105px;
+
+    animation-delay: -1s;
+}
+
+.m6 {
+    left: 150px;
+    top: 190px;
+
+    animation-delay: -2.3s;
+}
+
+.m7 {
+    left: 375px;
+    top: 190px;
+
+    animation-delay: -.9s;
+}
+
+
+/* =========================================
+   ANIMACIÓN FLORES
 ========================================= */
 
 @keyframes balanceo {
@@ -396,100 +443,6 @@ body {
     }
 }
 
-@keyframes flor-tocada {
-
-    0% {
-        transform: scale(1);
-    }
-
-    35% {
-        transform: scale(1.12) rotate(-6deg);
-    }
-
-    70% {
-        transform: scale(1.08) rotate(6deg);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-/* =========================================
-   POSICIÓN DE FLORES
-========================================= */
-
-.m1 {
-    left: 90px;
-    top: 85px;
-
-    animation-delay: -.5s;
-}
-
-.m2 {
-    left: 200px;
-    top: 40px;
-
-    animation-delay: -1.5s;
-}
-
-.m3 {
-    left: 315px;
-    top: 65px;
-
-    animation-delay: -.8s;
-}
-
-.m4 {
-    left: 430px;
-    top: 45px;
-
-    animation-delay: -2s;
-}
-
-.m5 {
-    left: 520px;
-    top: 110px;
-
-    animation-delay: -1s;
-}
-
-.m6 {
-    left: 140px;
-    top: 190px;
-
-    animation-delay: -2.5s;
-}
-
-.m7 {
-    left: 265px;
-    top: 150px;
-
-    animation-delay: -.3s;
-}
-
-.m8 {
-    left: 390px;
-    top: 165px;
-
-    animation-delay: -1.8s;
-}
-
-.m9 {
-    left: 490px;
-    top: 210px;
-
-    animation-delay: -2.8s;
-}
-
-.m10 {
-    left: 325px;
-    top: 255px;
-
-    animation-delay: -1.2s;
-}
-
 
 /* =========================================
    CARTA
@@ -498,23 +451,21 @@ body {
 .carta {
     position: absolute;
 
-    width: 195px;
+    width: 200px;
     height: 140px;
 
     left: 50%;
-    top: 310px;
+    top: 315px;
 
     transform: translateX(-50%);
 
-    padding: 0;
-
-    border: 0;
+    border: none;
 
     background: transparent;
 
     cursor: pointer;
 
-    z-index: 30;
+    z-index: 50;
 
     transition:
         transform .4s ease,
@@ -524,16 +475,8 @@ body {
 .carta:hover {
     transform:
         translateX(-50%)
-        translateY(-7px)
-        scale(1.04);
-
-    filter:
-        drop-shadow(0 12px 15px rgba(80, 60, 20, .2));
-}
-
-.carta:focus-visible {
-    outline: 3px solid #d8ad43;
-    border-radius: 10px;
+        translateY(-8px)
+        scale(1.05);
 }
 
 
@@ -547,19 +490,21 @@ body {
 
     overflow: hidden;
 
-    border: 2px solid #e4ce9d;
+    border:
+        2px solid #dfc58c;
 
     border-radius: 9px;
 
     background:
         linear-gradient(
             135deg,
-            #fffdf6,
-            #fff8e9
+            #fffef8,
+            #fff5d9
         );
 
     box-shadow:
-        0 15px 30px rgba(80, 60, 20, .25);
+        0 15px 30px
+        rgba(70, 50, 10, .25);
 }
 
 
@@ -568,118 +513,113 @@ body {
 .solapa {
     position: absolute;
 
-    width: 140px;
-    height: 140px;
+    width: 145px;
+    height: 145px;
 
     left: 50%;
     top: 0;
 
-    background: #f5e5c5;
-
     transform:
         translateX(-50%)
-        translateY(-70px)
+        translateY(-73px)
         rotate(45deg);
 
-    border: 1px solid #dfc799;
+    background: #f5e3bb;
 
-    z-index: 1;
+    border:
+        1px solid #dec28b;
 }
 
 
 /* CORAZÓN */
 
-.corazon-sobre {
+.corazon {
     position: absolute;
+
+    top: 28px;
 
     left: 0;
     right: 0;
 
-    top: 30px;
-
     text-align: center;
 
-    font-size: 26px;
+    font-size: 27px;
 
-    z-index: 4;
+    z-index: 5;
 }
 
 
 /* TEXTO */
 
-.texto-sobre {
+.texto {
     position: absolute;
+
+    bottom: 15px;
 
     left: 0;
     right: 0;
 
-    bottom: 17px;
-
     text-align: center;
 
-    color: #7b6637;
+    color: #786333;
 
     font-size: 18px;
 
     z-index: 5;
 }
 
-.texto-sobre small {
+.texto small {
     display: block;
-
-    margin-top: 3px;
 
     font-size: 11px;
 
-    color: #a28d5d;
+    margin-top: 4px;
+
+    color: #a28e5e;
 }
 
 
 /* =========================================
-   PÉTALOS QUE CAEN
+   PÉTALOS
 ========================================= */
 
-#petalos-caidos {
+#petalos {
     position: absolute;
 
     inset: 0;
 
     pointer-events: none;
 
-    z-index: 70;
-
-    overflow: hidden;
+    z-index: 100;
 }
 
 .petalo-caido {
     position: absolute;
 
     width: 14px;
-    height: 23px;
-
-    border-radius: 50%;
+    height: 24px;
 
     background: white;
 
-    opacity: .9;
+    border-radius: 50%;
 
     animation:
-        caer 2.8s linear forwards;
+        caer 3s linear forwards;
 }
 
 @keyframes caer {
 
-    0% {
+    from {
         transform:
             translateY(0)
-            rotate(0deg);
+            rotate(0);
 
         opacity: 1;
     }
 
-    100% {
+    to {
         transform:
-            translateY(390px)
+            translateY(400px)
             translateX(var(--movimiento))
             rotate(360deg);
 
@@ -689,7 +629,7 @@ body {
 
 
 /* =========================================
-   MODAL
+   MODAL DE LA CARTA
 ========================================= */
 
 .modal {
@@ -699,19 +639,21 @@ body {
 
     display: flex;
 
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 20px;
 
     background:
-        rgba(60, 48, 22, .48);
+        rgba(50, 40, 20, .55);
 
-    backdrop-filter: blur(7px);
+    backdrop-filter:
+        blur(7px);
 
-    z-index: 200;
+    z-index: 500;
 
     opacity: 0;
+
     visibility: hidden;
 
     transition: .4s;
@@ -731,35 +673,34 @@ body {
     position: relative;
 
     width: 500px;
+
     max-width: 100%;
 
     max-height: 88vh;
 
     overflow-y: auto;
 
-    padding:
-        38px
-        42px
-        40px;
+    padding: 40px 42px;
 
     background:
         linear-gradient(
             145deg,
             #fffef9,
-            #fff9e9
+            #fff8e5
         );
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, .3);
+        0 25px 70px
+        rgba(0, 0, 0, .3);
 
     transform:
-        scale(.65)
+        scale(.7)
         rotate(-3deg);
 
     transition:
-        transform .5s cubic-bezier(.2, .8, .2, 1);
+        transform .5s ease;
 }
 
 .modal.abierto .carta-abierta {
@@ -768,319 +709,468 @@ body {
         rotate(0);
 }
 
-
-/* DECORACIÓN */
-
-.decoracion-carta {
+.flores-carta {
     text-align: center;
 
-    font-size: 24px;
+    font-size: 25px;
 
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
-
-.corazon-grande {
-    text-align: center;
-
-    font-size: 42px;
-
-    animation:
-        latido 1.3s ease-in-out infinite;
-}
-
-@keyframes latido {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-}
-
-
-/* TÍTULO */
 
 .carta-abierta h2 {
     text-align: center;
 
-    color: #79632f;
-
     font-size: 28px;
 
-    margin-top: 5px;
+    color: #79632f;
 }
 
 .linea {
     width: 80px;
+
     height: 2px;
 
-    margin:
-        18px
-        auto
-        24px;
+    margin: 18px auto 25px;
 
-    background: #d5b76c;
+    background: #d6b766;
 }
 
-
-/* TEXTO */
-
 .carta-abierta p {
-    color: #665d4b;
+    text-align: center;
 
     font-size: 17px;
 
     line-height: 1.7;
 
-    text-align: center;
+    color: #665d4b;
 
     margin-bottom: 15px;
 }
-
-
-/* FIRMA */
 
 .firma {
     margin-top: 25px;
 
     text-align: center;
 
-    color: #8a7136;
-
     font-size: 18px;
 
     font-style: italic;
-}
 
-
-/* CERRAR */
-
-.cerrar {
-    position: absolute;
-
-    right: 12px;
-    top: 10px;
-
-    width: 44px;
-    height: 44px;
-
-    border: 0;
-
-    background: transparent;
-
-    color: #806d43;
-
-    font-size: 31px;
-
-    cursor: pointer;
-}
-
-.cerrar:hover {
-    color: #b09045;
+    color: #8b7135;
 }
 
 
 /* =========================================
-   📱 CELULAR
+   BOTÓN CERRAR
 ========================================= */
+
+.cerrar {
+    position: absolute;
+
+    right: 10px;
+    top: 8px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #806d43;
+
+    cursor: pointer;
+}
+
+
+/* =================================================
+   📱 CELULAR
+================================================= */
 
 @media (max-width: 700px) {
 
+    body {
+        width: 100%;
+        min-height: 100svh;
+        overflow-x: hidden;
+    }
+
+
+    /* -----------------------------------------
+       TÍTULO
+    ----------------------------------------- */
+
     .encabezado {
-        padding-top: 20px;
+        width: 100%;
+
+        padding:
+            18px
+            12px
+            0;
     }
 
     .encabezado h1 {
-        font-size: 24px;
+        font-size: 22px;
 
-        line-height: 1.3;
+        line-height: 1.2;
     }
 
     .encabezado p {
-        font-size: 14px;
+        font-size: 12px;
+
+        line-height: 1.4;
+
+        max-width: 280px;
+
+        margin: 5px auto 0;
     }
 
 
-    /* RAMO */
+    /* -----------------------------------------
+       GALERÍA EN CELULAR
+    ----------------------------------------- */
+
+    .galeria {
+        position: absolute;
+
+        top: 100px;
+
+        left: 0;
+
+        width: 100%;
+        height: 500px;
+
+        transform: none;
+    }
+
+
+    .foto {
+        width: 58px;
+        height: 72px;
+
+        padding: 4px;
+
+        opacity: .65;
+
+        border-radius: 3px;
+
+        box-shadow:
+            0 5px 12px
+            rgba(70, 55, 20, .18);
+    }
+
+    .foto img {
+        width: 100%;
+        height: 62px;
+
+        object-fit: cover;
+    }
+
+
+    /* FOTO IZQUIERDA */
+
+    .foto1 {
+        left: 3px;
+        top: 10px;
+
+        transform: rotate(-8deg);
+    }
+
+    .foto2 {
+        left: 2px;
+        top: 145px;
+
+        transform: rotate(7deg);
+    }
+
+    .foto3 {
+        left: 4px;
+        top: 280px;
+
+        transform: rotate(-6deg);
+    }
+
+    .foto4 {
+        left: 12px;
+        top: 410px;
+
+        transform: rotate(7deg);
+    }
+
+
+    /* FOTO DERECHA */
+
+    .foto5 {
+        right: 3px;
+        top: 10px;
+
+        transform: rotate(8deg);
+    }
+
+    .foto6 {
+        right: 2px;
+        top: 145px;
+
+        transform: rotate(-7deg);
+    }
+
+    .foto7 {
+        right: 4px;
+        top: 280px;
+
+        transform: rotate(6deg);
+    }
+
+    .foto8 {
+        right: 12px;
+        top: 410px;
+
+        transform: rotate(-7deg);
+    }
+
+
+    /* -----------------------------------------
+       RAMO
+    ----------------------------------------- */
 
     .ramo {
         width: 360px;
-        height: 560px;
+        height: 530px;
 
         margin-top: 0;
 
-        transform:
-            scale(.84);
+        /*
+         * ESTE ES EL CAMBIO IMPORTANTE:
+         * el ramo entero se reduce en celular.
+         */
+
+        transform: scale(.67);
 
         transform-origin:
             top center;
     }
 
 
-    /* FLORES */
+    /* -----------------------------------------
+       FLORES
+    ----------------------------------------- */
+
+    .margarita {
+        width: 90px;
+        height: 90px;
+    }
+
+    .margarita img {
+        border-width: 6px;
+    }
+
+
+    /* POSICIONES */
 
     .m1 {
-        left: 12px;
-        top: 78px;
+        left: 8px;
+        top: 75px;
     }
 
     .m2 {
-        left: 78px;
-        top: 38px;
+        left: 70px;
+        top: 30px;
     }
 
     .m3 {
-        left: 145px;
-        top: 60px;
+        left: 135px;
+        top: 52px;
     }
 
     .m4 {
-        left: 210px;
-        top: 40px;
+        left: 200px;
+        top: 30px;
     }
 
     .m5 {
-        left: 265px;
-        top: 95px;
+        left: 262px;
+        top: 80px;
     }
 
     .m6 {
-        left: 30px;
-        top: 170px;
-    }
-
-    .m7 {
-        left: 103px;
-        top: 145px;
-    }
-
-    .m8 {
-        left: 175px;
+        left: 70px;
         top: 155px;
     }
 
-    .m9 {
-        left: 238px;
-        top: 185px;
+    .m7 {
+        left: 200px;
+        top: 155px;
     }
 
-    .m10 {
-        left: 125px;
-        top: 225px;
+
+    /* -----------------------------------------
+       TALLOS EN CELULAR
+    ----------------------------------------- */
+
+    .tallo {
+        width: 7px;
+        height: 350px;
+    }
+
+
+    /* -----------------------------------------
+       HOJAS
+    ----------------------------------------- */
+
+    .hoja {
+        width: 70px;
+        height: 30px;
+    }
+
+
+    /* -----------------------------------------
+       CARTA
+    ----------------------------------------- */
+
+    .carta {
+        width: 155px;
+        height: 105px;
+
+        top: 270px;
+    }
+
+    .corazon {
+        top: 20px;
+
+        font-size: 21px;
+    }
+
+    .texto {
+        bottom: 12px;
+
+        font-size: 14px;
+    }
+
+    .texto small {
+        font-size: 9px;
+    }
+
+
+    /* -----------------------------------------
+       CARTA ABIERTA EN CELULAR
+    ----------------------------------------- */
+
+    .modal {
+        padding: 10px;
+    }
+
+    .carta-abierta {
+        width: 94%;
+
+        max-height: 85vh;
+
+        padding:
+            35px
+            18px
+            25px;
+
+        border-radius: 12px;
+    }
+
+    .carta-abierta h2 {
+        font-size: 21px;
+
+        line-height: 1.3;
+    }
+
+    .carta-abierta p {
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+    .firma {
+        font-size: 15px;
+    }
+
+    .flores-carta {
+        font-size: 21px;
+    }
+
+    .cerrar {
+        right: 5px;
+        top: 4px;
+
+        font-size: 28px;
+    }
+}
+
+
+/* =================================================
+   📱 CELULARES PEQUEÑOS
+================================================= */
+
+@media (max-width: 380px) {
+
+    .encabezado h1 {
+        font-size: 20px;
+    }
+
+    .encabezado p {
+        font-size: 11px;
+    }
+
+
+    /* RAMO TODAVÍA MÁS PEQUEÑO */
+
+    .ramo {
+        transform: scale(.58);
+
+        transform-origin:
+            top center;
+    }
+
+
+    /* FOTOS */
+
+    .foto {
+        width: 50px;
+        height: 63px;
+
+        padding: 3px;
+    }
+
+    .foto img {
+        height: 55px;
     }
 
 
     /* CARTA */
 
-    .carta {
-        width: 160px;
-        height: 115px;
-
-        top: 265px;
-    }
-
-    .texto-sobre {
-        font-size: 16px;
-    }
-
-    .corazon-sobre {
-        font-size: 22px;
-
-        top: 23px;
-    }
-
-
-    /* CARTA ABIERTA */
-
-    .modal {
-        padding: 15px;
-    }
-
     .carta-abierta {
-        width: 100%;
-
-        max-height: 86vh;
+        width: 96%;
 
         padding:
             35px
-            20px
-            28px;
-    }
-
-    .carta-abierta h2 {
-        font-size: 22px;
+            14px
+            20px;
     }
 
     .carta-abierta p {
-        font-size: 15px;
-
-        line-height: 1.6;
-    }
-
-    .decoracion-carta {
-        font-size: 20px;
-    }
-
-    .corazon-grande {
-        font-size: 34px;
-    }
-
-    .firma {
-        font-size: 16px;
-    }
-}
-
-
-/* =========================================
-   📱 CELULAR PEQUEÑO
-========================================= */
-
-@media (max-width: 380px) {
-
-    .encabezado h1 {
-        font-size: 21px;
-    }
-
-    .encabezado p {
         font-size: 13px;
     }
-
-    .ramo {
-        transform: scale(.75);
-    }
-
-    .carta-abierta {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .carta-abierta h2 {
-        font-size: 20px;
-    }
-
-    .carta-abierta p {
-        font-size: 14px;
-    }
 }
 
 
-/* =========================================
-   MENOS ANIMACIÓN
-========================================= */
+/* =================================================
+   📱 CELULARES MUY ANGOSTOS
+================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 340px) {
 
-    .margarita,
-    .corazon-grande {
-        animation: none;
+    .ramo {
+        transform: scale(.52);
     }
 
-    .modal,
-    .carta-abierta,
-    .carta {
-        transition: none;
+    .foto {
+        opacity: .5;
     }
+
 }
